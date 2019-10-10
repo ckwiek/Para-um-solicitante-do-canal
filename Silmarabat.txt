@@ -1,0 +1,19 @@
+MODE      COM5        BAUD=9600 PARITY=n DATA=8
+
+:LOOP
+  cls
+  
+  CHOICE /M "PRESSIONE S PARA LIGAR" 
+  IF errorlevel 2 GOTO END
+  IF errorlevel 1 GOTO LIGA
+  
+  GOTO END
+  :LIGA
+  ECHO a >              COM5
+  cls
+
+  
+  :END
+  cls
+  
+GOTO LOOP 

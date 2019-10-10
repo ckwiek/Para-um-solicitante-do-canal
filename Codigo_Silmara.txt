@@ -1,0 +1,23 @@
+
+
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+}
+
+unsigned long m=0;
+
+void loop(){
+  int c = Serial.read();
+  
+  if (c == 97) {                //a
+    digitalWrite(13, HIGH); 
+    m = millis();
+  }
+  
+  if (millis()-m > 500){
+    digitalWrite(13, LOW); 
+  }
+}
+
